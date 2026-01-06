@@ -81,22 +81,75 @@ ul.center {
 <!--what do we do now -->
 <p>now with that information we can conclude where should we start looking for problems the the hypotheses is that if the receiver isn't getting any power
 <br>now before we start we will grab a copy of the service manual</p>
+<!--how did you get sm (maybe no need for this)-->
+<p> I personally like <A HREF="https://elektrotanya.com/keres">elektrotanya</A> to get a service manuals for devices</p>
+<!--WHAT DO we see now ? car-->
 
+<p>after we open up the receiver here's what we will check first</p> 
 <div>
-  <h2><u> Symptoms</u></H2>
+  <h2><u> what we will check </u></H2>
   <FONT color= "18CADE" , face="fantasy" size= "3" >
   <UL TYPE=dis class="center" style="line-height:140%">
-    <LI>No Standby LED </LI>
-    <LI>No re clicks</LI>
-    <LI>NO audio/video  output</LI>
-    <LI>NO IR </LI>
-    <LI>NO DYPLAY</LI>
+    <LI>all fuses</LI>
+    <LI>Relays</LI>
+    <LI>power switch</LI>
+    <LI>Standby power </LI>
   </font>
   </UL>
 </div>
-<!--wha
+<p>the after taking the above and seeing that everything is working
+<br>now we check for standby voltage with a multimeter
+will we see U5 board that these are responsible for standby voltage
+</p>
+<!--u5 SEE NOTE we use  P MODEL for power at the -->
+<p>after scamatic for the board we see but a certain connector that we need to have 10 voltage we will see pin "+10vs and +10vss"</p>
+<center><img src="files/images/Screenshot 2026-01-06 231335.png" alt="U5" style="max-width:30%;height:auto;"></center>
+<p> after continuing to follow the diagrams to the 10 voltage line we will end up in a Power supply section after that we go to the Preamplifier section the feast board we can see it has one connector that connects to the microcontroller bord </p>
+<p>here we have a convenient FIRMWARE WRITING PORT that lets us communicate directly with the cpu (the renesas (M16C/62P) M30627FHPGP) for the receiver </p>
+<P>after useing UART we can conclude with that the michael control it is haltS immediately after a reset has been done realterm </P>
+<p>now we take some measurements on the microcontroller board</p>
+
+<FONT color= "#154AC9" , face="Times New Roman" , size= "4">
+<TABLE Width=400 Align="center" BGColor="lightyellow" Border=5 BorderColor="A13BFF" Cellpadding=3 Cellspacing=3>
+<TR><TH align="Center" BGColor="0DD6D3" colspan=3> Onkyo cap test measurements</TH></TR>
+<TR Align="Center" BGColor="0DD666"><TH Align="Center">TIME</TH><TH>sat</TH><TH>v</TH>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:12m:51s</Td><Td BGColor="FF0000">not on power</Td><Td>3.587v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:13m:02s</Td><Td BGColor="FF0000">not on power</Td><Td>3.587v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:13m:03s</Td><Td BGColor="FF7300">on power</Td><Td>4.713v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:13m:10s</Td><Td BGColor="FF7300">on power</Td><Td>4.772v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:13m:40s</Td><Td BGColor="FF7300">on power</Td><Td>4.812v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:25m:28s</Td><Td BGColor="FF7300">on power</Td><Td>4.935v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:45m:47s</Td><Td BGColor="FF7300">on power</Td><Td>4.940v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:45m:54s</Td><Td BGColor="FF7300">on power</Td><Td>4.940v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:55m:54s</Td><Td BGColor="FF0000">not on power</Td><Td>4.885v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:57m:00s</Td><Td BGColor="FF0000">not on power</Td><Td>4.874v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:57m:44s</Td><Td BGColor="FF0000">not on power</Td><Td>4.857v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:58m:00s</Td><Td BGColor="FF0000">not on power</Td><Td>4.851v</Td>
+<TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:58m:05s</Td><Td BGColor="FF0000">not on power</Td><Td>4.829v</Td>
+<CAPTION Align="bottom">measurement was takeing with a UNI-T UT60BT</CAPTION>
+</TABLE>
+</FONT>
+
+<p>after seeing the table we can conclude that we have capacitor degradation</p>
+<P>after taking carefully the microprocessors beans in the diagram we find a pin with the name POFF that connects to a transistor that when the line goes LOW it signals to the cpu that ther has  been a POWER FAILRE and therefore to halt the cpu</P>
+<P>after measuring the transistor</P>
+<center><img src="files/images/2025-05-16-18-47-38-6112.jpg" alt="transistor" style="max-width:30%;height:auto;"></center>
+<p>we see veterans history is at zero point fifty seven volts that means the transistor has sent a signal to the cpu low so that means the cpu halting now we need to find out why we started tracing the tansy saw the lines of the transistor the and we will seek out the connected point of the microcontroller board that there needs to be thirteen volts input to end up in the transistor</p>
+<p>after seeing that there is no voltage going to that certain pin for the transistor we go bucket board and go to the preamplifier aboard from before invaded we see near some capacitors some suspicious substance the after taking more carefully we see that a corrosion has happened to the traces due to a capacitor leaking we will now repair that trace and will tick again </p>
+<p>the after repairing if it grew did trace any replacing some capacitorswe see that the transistor now doesn't pull lowbeautiful letting the cpu of the receiver continue as normal in this the receiver goes properly into standbyand with that we have fixed the receiver</p>
+
+<A HREF="files/images/fix1.jpg"><img src="files/images/fix1.jpg" alt="fix1" style="max-width:15%;height:auto;"></a>
+<A HREF="files/images/fix2.jpg"><img src="files/images/fix2.jpg" alt="fix2" style="max-width:18%;height:auto;"></a>
+<A HREF="files/images/fix3.png"><img src="files/images/fix3.png" alt="fix3" style="max-width:27%;height:auto;"></a>
+<A HREF="files/images/fix4.png"><img src="files/images/fix4.png" alt="fix4" style="max-width:30%;height:auto;"></a>
+
+ADD VID AND AUDIO HERE HE WHAT DO ADD FROM TEST.TXT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
 <div class="onebox">
-  <h2>This is a heading in a div element</h2>
+  <h2>to conclude because the unit was for a lot of years in stewards capacitors started the green dink and therefore started leafing on the pcb of the receivernt make enough to recording a trace a certain theme of the deceiver it wasn't getting involved that saw the power failure detector was active and preventing the cpu from starting after fixing the trees they receive it works fine</h2>
   <p>This is some text in a div element.</p>
 </div>
 
@@ -107,7 +160,7 @@ ul.center {
 </BODY>
 <!-- about who made part  and info -->
 <footer>
-  <p> FOOTer all start in 2024</FOOTer><br>
+  <p> FOOTer all start in 2024 this webstie was made </FOOTer><br>
   <a href="mailto:hege@example.com">hege@example.com</a></p>
 </footer>
 </HTML>
