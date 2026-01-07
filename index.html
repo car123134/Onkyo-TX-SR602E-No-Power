@@ -59,11 +59,11 @@ ul.center {
 <!--what did we do 1 -->
 
 
-<!-- FONT for gen part font is   OpenDyslexic https://opendyslexic.org/ -->
+<!-- FONT for gen part font is  OpenDyslexic https://opendyslexic.org/ -->
 
 <center><img src="files/images/onkyohome.png" alt="onkyo" style="max-width:70%;height:auto;"></center>
 
-<p>firstly we will identify what are the exact symptoms are</p>
+<p>Firstly we will identify what are the exact symptoms are</p>
 
 <HR>
 <div>
@@ -79,7 +79,7 @@ ul.center {
   </UL>
 </div>
 <!--what do we do now -->
-<p>now with that information we can conclude where should we start looking for problems the the hypotheses is that if the receiver isn't getting any power
+<p>now with that information we can conclude where should we start looking for problems
 <br>now before we start we will grab a copy of the service manual</p>
 <!--how did you get sm (maybe no need for this)-->
 <p> I personally like <A HREF="https://elektrotanya.com/keres">elektrotanya</A> to get a service manuals for devices</p>
@@ -97,18 +97,18 @@ ul.center {
   </font>
   </UL>
 </div>
-<p>the after taking the above and seeing that everything is working
+<p>the after looking at the above and seeing that everything is working as it should be
 <br>now we check for standby voltage with a multimeter
-will we see U5 board that these are responsible for standby voltage
-</p>
+will we see the U5 board that is responsible for standby voltage/power</p>
 <!--u5 SEE NOTE we use  P MODEL for power at the -->
-<p>after scamatic for the board we see but a certain connector that we need to have 10 voltage we will see pin "+10vs and +10vss"</p>
+<!--WE standy power good now what ?-->
+<p>after seeing the scamatic for the board we see a certain connector that we need to have 10 voltage we will see pin "+10vs and +10vss"</p>
 <center><img src="files/images/Screenshot 2026-01-06 231335.png" alt="U5" style="max-width:30%;height:auto;"></center>
-<p> after continuing to follow the diagrams to the 10 voltage line we will end up in a Power supply section after that we go to the Preamplifier section the feast board we can see it has one connector that connects to the microcontroller bord </p>
-<p>here we have a convenient FIRMWARE WRITING PORT that lets us communicate directly with the cpu (the renesas (M16C/62P) M30627FHPGP) for the receiver </p>
-<P>after useing UART we can conclude with that the michael control it is haltS immediately after a reset has been done realterm </P>
+<p> after continuing to follow the scamatics to the 10 voltage line we will end up in a Power supply section after that we go to the Preamplifier section and there we have a board that on it has some connectors that connects to the microprocessor bord </p>
+<p>here we have a convenient FIRMWARE WRITING PORT that lets us communicate directly with the cpu (the renesas (M16C/62P) M30627FHPGP) of the receiver </p>
+<P>after useing UART and realterm we can conclude with that the microprocessor it halting immediately after a reset has been done on the microprocessor  </P>
 <p>now we take some measurements on the microcontroller board</p>
-
+<!--bad caps how-->
 <FONT color= "#154AC9" , face="Times New Roman" , size= "4">
 <TABLE Width=400 Align="center" BGColor="lightyellow" Border=5 BorderColor="A13BFF" Cellpadding=3 Cellspacing=3>
 <TR><TH align="Center" BGColor="0DD6D3" colspan=3> Onkyo cap test measurements</TH></TR>
@@ -130,13 +130,16 @@ will we see U5 board that these are responsible for standby voltage
 </TABLE>
 </FONT>
 
-<p>after seeing the table we can conclude that we have capacitor degradation</p>
-<P>after taking carefully the microprocessors beans in the diagram we find a pin with the name POFF that connects to a transistor that when the line goes LOW it signals to the cpu that ther has  been a POWER FAILRE and therefore to halt the cpu</P>
+<p>after seeing the table upvoe we can conclude that we have capacitor degradation this gives usa clue to what have may happened </p>
+<!--ok how did we fix it-->
+<P>after taking a carefully look at the microprocessors diagram we find a pin with the name POFF that connects to a transistor that when the line goes LOW it signals to the cpu that there has been a POWER FAILRE and therefore to halt the cpu</P>
 <P>after measuring the transistor</P>
 <center><img src="files/images/2025-05-16-18-47-38-6112.jpg" alt="transistor" style="max-width:30%;height:auto;"></center>
-<p>we see veterans history is at zero point fifty seven volts that means the transistor has sent a signal to the cpu low so that means the cpu halting now we need to find out why we started tracing the tansy saw the lines of the transistor the and we will seek out the connected point of the microcontroller board that there needs to be thirteen volts input to end up in the transistor</p>
-<p>after seeing that there is no voltage going to that certain pin for the transistor we go bucket board and go to the preamplifier aboard from before invaded we see near some capacitors some suspicious substance the after taking more carefully we see that a corrosion has happened to the traces due to a capacitor leaking we will now repair that trace and will tick again </p>
-<p>the after repairing if it grew did trace any replacing some capacitorswe see that the transistor now doesn't pull lowbeautiful letting the cpu of the receiver continue as normal in this the receiver goes properly into standbyand with that we have fixed the receiver</p>
+<p>we see at the input of PFF its 0.57 volts that means the transistor has sent a signal to the cpu low so that means the cpu halting</p> 
+<p> now we need to find out why <br> 
+when we started tracing the traces of the transistor line sand we will we will end up at the connector at the microprocessor bord that needs 13 volts input to wind up in the transistor </p>
+<p>after seeing that there is no voltage going to that certain pin for the transistor we go back a board and go to the preamplifier bord from before and we see near some capacitors some suspicious substance the after taking more carefully we see that a corrosion has happened to the traces due to a capacitor leaking we will now repair that trace and will try again </p>
+<p>the after repairing the trace and  replacing some capacitors we see that the transistor now doesn't pull pull low  letting the cpu of the receiver continue as normal in this the receiver goes properly into standbyand with that we have fixed the receiver</p>
 
 <A HREF="files/images/fix1.jpg"><img src="files/images/fix1.jpg" alt="fix1" style="max-width:15%;height:auto;"></a>
 <A HREF="files/images/fix2.jpg"><img src="files/images/fix2.jpg" alt="fix2" style="max-width:18%;height:auto;"></a>
