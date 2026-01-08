@@ -61,11 +61,12 @@ ul.center {
 
 <!-- FONT for gen part font is  OpenDyslexic https://opendyslexic.org/ -->
 
-<center><img src="files/images/onkyohome.png" alt="onkyo" style="max-width:70%;height:auto;"></center>
+<center><img src="files/images/onkyohome.png" alt="onkyo" style="max-width:64%;height:auto;"></center>
 
 <p>Firstly we will identify what are the exact symptoms are</p>
 
 <HR>
+<center><video src="files/videos/noboot1.mp4" style="max-width:14%;height:auto;" controls preload="auto" alt="onkyovid"> </video></center>
 <div>
   <h2><u> Symptoms</u></H2>
   <FONT color= "18CADE" , face="fantasy" size= "3" >
@@ -78,13 +79,15 @@ ul.center {
   </font>
   </UL>
 </div>
+
+
 <!--what do we do now -->
 <p>now with that information we can conclude where should we start looking for problems
 <br>now before we start we will grab a copy of the service manual</p>
 <!--how did you get sm (maybe no need for this)-->
 <p> I personally like <A HREF="https://elektrotanya.com/keres">elektrotanya</A> to get a service manuals for devices</p>
 <!--WHAT DO we see now ? car-->
-
+<HR>
 <p>after we open up the receiver here's what we will check first</p> 
 <div>
   <h2><u> what we will check </u></H2>
@@ -134,7 +137,13 @@ will we see the U5 board that is responsible for standby voltage/power</p>
 <!--ok how did we fix it-->
 <P>after taking a carefully look at the microprocessors diagram we find a pin with the name POFF that connects to a transistor that when the line goes LOW it signals to the cpu that there has been a POWER FAILRE and therefore to halt the cpu</P>
 <P>after measuring the transistor</P>
-<center><img src="files/images/2025-05-16-18-47-38-6112.jpg" alt="transistor" style="max-width:30%;height:auto;"></center>
+<A HREF="files/images/seetr.png"><img src="files/images/seetr.png" alt="diagram POFF" style="max-width:27%;height:auto;"></a>
+<A HREF="files/images/2025-05-16-18-47-38-6112.jpg"><img src="files/images/2025-05-16-18-47-38-6112.jpg" alt="transistor" style="max-width:28%;height:auto;"></a>
+<A HREF="files/images/POFF.jpg"><img src="files/images/POFF.jpg" alt="POFF" style="max-width:36%;height:auto;"></a>
+
+
+
+
 <p>we see at the input of PFF its 0.57 volts that means the transistor has sent a signal to the cpu low so that means the cpu halting</p> 
 <p> now we need to find out why <br> 
 when we started tracing the traces of the transistor line sand we will we will end up at the connector at the microprocessor bord that needs 13 volts input to wind up in the transistor </p>
