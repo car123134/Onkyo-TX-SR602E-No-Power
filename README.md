@@ -1,2 +1,5 @@
-# onkyo-repair
-this is the process used to repair a onkyo TX-SR602E av receiver 
+# Onkyo-TX-SR602E-repair
+This is the process used to repair a Onkyo TX-SR602E av receiver with no power
+
+
+
