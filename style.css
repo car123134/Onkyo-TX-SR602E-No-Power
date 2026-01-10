@@ -84,8 +84,8 @@ ul.list li {
 
 footer {
   text-align: center;
-  padding: 3px;
-  font-size: 10px;
-  background-color: DarkSalmon;
+  padding: 0.5em;
+  font-size: clamp(6px, 2.5vw,19px);
+  background-color: rgb(176, 233, 122);
   color: white;
 }
