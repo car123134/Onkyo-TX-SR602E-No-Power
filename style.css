@@ -1,0 +1,28 @@
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+
+ul.center {
+  display: inline-block;
+  text-align: left;
+}
+.onebox {
+  border: 5px outset rgb(204, 0, 255);
+  background-color: lightblue;    
+  text-align: center;
+}
+.wbox {
+  border: 5px outset rgb(255, 0, 0);
+  background-color: rgb(255, 136, 0);    
+  text-align: center;
+}
+@font-face {
+  font-family: opendys;
+  src: url(files/fonts/OpenDyslexic-Regular.woff2);
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+}
