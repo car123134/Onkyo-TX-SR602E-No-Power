@@ -1,100 +1,91 @@
 <!--C:\HTML -->
 <HTML>
 <HEAD>
-<link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 <TITLE>onkyo</TITLE>
 <link rel="shortcut icon" type="image/x-icon" href="files/images/car123.ico" />
 <!--CCS SET-->
+
 <!--moved to ccs file-->
-<style>
 
-</style>
-
-<!-- add fix for all monitor/srceen and test on non ultrawide monitor-->
+<!-- add fix for all monitor/srceen and test on non ultrawide monitor makeing css file -->
 <!---->
+
 <H1>
 Onkyo-TX-SR602E-No-Power
 </H1>
 </HEAD>
 <!--MAIN set -->
-<BODY BGColor = "#D1E4DD" Text= "#000000" >
+<BODY>
 <!--MAIN -->
 <!-- FONT for w part  -->
-<FONT color= "#000000" , face="Arial" , size= "2">
 
-
-<p>This is some text in a p element.</p>
 <!-- wbox   -->
 <div class="wbox">
   
-  <h2><img src="files/images/welecpng.png" alt="w"  width="100" height="100" style="vertical-align:middle;margin:-50 0px">
+  <h2><img src="files/images/welecpng.png" alt="w" style="max-width:13%;height:auto;vertical-align:middle;margin:-50 0px" >
     <strong>Always be careful when opening up Electronics<br>
     Risk of electrocution</strong></h2>
 </div>
 <!-- info about today topic -->
 <!-- 1/5/2026 : 1:13AM  -->
-</FONT>
 <br>
-<FONT color= "#000000" , face="opendys" , size= "2">
-<p>An <A HREF="https://en.wikipedia.org/wiki/AV_receiver">AV receiver</A> from 2005 that was not workingwith no sense of life and the model is an <A HREF="https://hifi-wiki.com/index.php/Onkyo_TX-SR_602_E">Onkyo TX-SR 602 E</A></p>
+<p class="opendys">An <A HREF="https://en.wikipedia.org/wiki/AV_receiver">AV receiver</A> from 2005 that was not workingwith no sense of life and the model is an <A HREF="https://hifi-wiki.com/index.php/Onkyo_TX-SR_602_E">Onkyo TX-SR 602 E</A></p>
 <!--<center><img src="files/images/onkyohome.png" alt="onkyo"  width="1400" height="512" align="middle"> </center>-->
 <!--what did we do 1 -->
 
 
 <!-- FONT for gen part font is  OpenDyslexic https://opendyslexic.org/ -->
 
-<center><img src="files/images/onkyohome.png" alt="onkyo" style="max-width:64%;height:auto;"></center>
+<img src="files/images/onkyohome.png" alt="onkyo" class="center" style="max-width:64%;height:auto;">
 
-<p>Firstly we will identify what are the exact symptoms are</p>
+<p class="opendys">Firstly we will identify what are the exact symptoms are</p>
 
 <HR>
-<center><video src="files/videos/noboot1.mp4" style="max-width:14%;height:auto;" controls preload="auto" alt="onkyovid"> </video></center>
-<div>
+<video src="files/videos/noboot1.mp4" class="center" style="max-width:14%;height:auto;" controls preload="auto" alt="onkyovid"> </video>
+<div face="fantasy">
   <h2><u> Symptoms</u></H2>
-  <FONT color= "18CADE" , face="fantasy" size= "3" >
-  <UL TYPE=dis class="center" style="line-height:140%">
+  <UL class="list" face="fantasy">
     <LI>No Standby LED </LI>
     <LI>No re clicks</LI>
     <LI>NO audio/video  output</LI>
     <LI>NO IR </LI>
     <LI>NO DYPLAY</LI>
-  </font>
   </UL>
 </div>
 
 
 <!--what do we do now -->
-<p>now with that information we can conclude where should we start looking for problems
+<p class="opendys">now with that information we can conclude where should we start looking for problems
 <br>now before we start we will grab a copy of the service manual</p>
 <!--how did you get sm (maybe no need for this)-->
-<p> I personally like <A HREF="https://elektrotanya.com/keres">elektrotanya</A> to get a service manuals for devices</p>
+<p class="opendys"> I personally like <A HREF="https://elektrotanya.com/keres">elektrotanya</A> to get a service manuals for devices</p>
 <!--WHAT DO we see now ? car-->
 <HR>
-<p>after we open up the receiver here's what we will check first</p> 
-<div>
+<p class="opendys">after we open up the receiver here's what we will check first</p> 
+<div face="fantasy">
   <h2><u> what we will check </u></H2>
-  <FONT color= "18CADE" , face="fantasy" size= "3" >
-  <UL TYPE=dis class="center" style="line-height:140%">
+  <UL class="list" face="fantasy">
     <LI>all fuses</LI>
     <LI>Relays</LI>
     <LI>power switch</LI>
     <LI>Standby power </LI>
-  </font>
   </UL>
 </div>
-<p>the after looking at the above and seeing that everything is working as it should be
+<p class="opendys">the after looking at the above and seeing that everything is working as it should be
 <br>now we check for standby voltage with a multimeter
 will we see the U5 board that is responsible for standby voltage/power</p>
 <!--u5 SEE NOTE we use  P MODEL for power at the -->
 <!--WE standy power good now what ?-->
-<p>after seeing the scamatic for the board we see a certain connector that we need to have 10 voltage we will see pin "+10vs and +10vss"</p>
-<center><img src="files/images/Screenshot 2026-01-06 231335.png" alt="U5" style="max-width:30%;height:auto;"></center>
-<p> after continuing to follow the scamatics to the 10 voltage line we will end up in a Power supply section after that we go to the Preamplifier section and there we have a board that on it has some connectors that connects to the microprocessor bord </p>
-<p>here we have a convenient FIRMWARE WRITING PORT that lets us communicate directly with the cpu (the renesas (M16C/62P) M30627FHPGP) of the receiver </p>
-<P>after useing UART and realterm we can conclude with that the microprocessor it halting immediately after a reset has been done on the microprocessor  </P>
-<p>now we take some measurements on the microcontroller board</p>
+<p class="opendys">after seeing the scamatic for the board we see a certain connector that we need to have 10 voltage we will see pin "+10vs and +10vss"</p>
+<img src="files/images/Screenshot 2026-01-06 231335.png" alt="U5" class="center" style="max-width:30%;height:auto;">
+<p class="opendys"> after continuing to follow the scamatics to the 10 voltage line we will end up in a Power supply section after that we go to the Preamplifier section and there we have a board that on it has some connectors that connects to the microprocessor bord </p>
+<p class="opendys">here we have a convenient FIRMWARE WRITING PORT that lets us communicate directly with the cpu (the renesas (M16C/62P) M30627FHPGP) of the receiver </p>
+<P class="opendys">after useing UART and realterm we can conclude with that the microprocessor it halting immediately after a reset has been done on the microprocessor  </P>
+<p class="opendys">now we take some measurements on the microcontroller board</p>
 <!--bad caps how-->
+
 <FONT color= "#154AC9" , face="Times New Roman" , size= "4">
 <TABLE Width=400 Align="center" BGColor="lightyellow" Border=5 BorderColor="A13BFF" Cellpadding=3 Cellspacing=3>
 <TR><TH align="Center" BGColor="0DD6D3" colspan=3> Onkyo cap test measurements</TH></TR>
@@ -116,10 +107,10 @@ will we see the U5 board that is responsible for standby voltage/power</p>
 </TABLE>
 </FONT>
 
-<p>after seeing the table upvoe we can conclude that we have capacitor degradation this gives usa clue to what have may happened </p>
+<p class="opendys">after seeing the table upvoe we can conclude that we have capacitor degradation this gives usa clue to what have may happened </p>
 <!--ok how did we fix it-->
-<P>after taking a carefully look at the microprocessors diagram we find a pin with the name POFF that connects to a transistor that when the line goes LOW it signals to the cpu that there has been a POWER FAILRE and therefore to halt the cpu</P>
-<P>after measuring the transistor</P>
+<P class="opendys">after taking a carefully look at the microprocessors diagram we find a pin with the name POFF that connects to a transistor that when the line goes LOW it signals to the cpu that there has been a POWER FAILRE and therefore to halt the cpu</P>
+<P class="opendys">after measuring the transistor</P>
 <A HREF="files/images/seetr.png"><img src="files/images/seetr.png" alt="diagram POFF" style="max-width:27%;height:auto;"></a>
 <A HREF="files/images/2025-05-16-18-47-38-6112.jpg"><img src="files/images/2025-05-16-18-47-38-6112.jpg" alt="transistor" style="max-width:28%;height:auto;"></a>
 <A HREF="files/images/POFF.jpg"><img src="files/images/POFF.jpg" alt="POFF" style="max-width:36%;height:auto;"></a>
@@ -127,11 +118,11 @@ will we see the U5 board that is responsible for standby voltage/power</p>
 
 
 
-<p>we see at the input of PFF its 0.57 volts that means the transistor has sent a signal to the cpu low so that means the cpu halting</p> 
-<p> now we need to find out why <br> 
+<p class="opendys">we see at the input of PFF its 0.57 volts that means the transistor has sent a signal to the cpu low so that means the cpu halting</p> 
+<p class="opendys"> now we need to find out why <br> 
 when we started tracing the traces of the transistor line sand we will we will end up at the connector at the microprocessor bord that needs 13 volts input to wind up in the transistor </p>
-<p>after seeing that there is no voltage going to that certain pin for the transistor we go back a board and go to the preamplifier bord from before and we see near some capacitors some suspicious substance the after taking more carefully we see that a corrosion has happened to the traces due to a capacitor leaking we will now repair that trace and will try again </p>
-<p>the after repairing the trace and  replacing some capacitors we see that the transistor now doesn't pull pull low  letting the cpu of the receiver continue as normal in this the receiver goes properly into standbyand with that we have fixed the receiver</p>
+<p class="opendys">after seeing that there is no voltage going to that certain pin for the transistor we go back a board and go to the preamplifier bord from before and we see near some capacitors some suspicious substance the after taking more carefully we see that a corrosion has happened to the traces due to a capacitor leaking we will now repair that trace and will try again </p>
+<p class="opendys">the after repairing the trace and  replacing some capacitors we see that the transistor now doesn't pull pull low  letting the cpu of the receiver continue as normal in this the receiver goes properly into standbyand with that we have fixed the receiver</p>
 
 <A HREF="files/images/fix1.jpg"><img src="files/images/fix1.jpg" alt="fix1" style="max-width:15%;height:auto;"></a>
 <A HREF="files/images/fix2.jpg"><img src="files/images/fix2.jpg" alt="fix2" style="max-width:18%;height:auto;"></a>
@@ -139,7 +130,7 @@ when we started tracing the traces of the transistor line sand we will we will e
 <A HREF="files/images/fix4.png"><img src="files/images/fix4.png" alt="fix4" style="max-width:30%;height:auto;"></a>
 
 ADD VID AND AUDIO HERE HE WHAT DO ADD FROM TEST.TXT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-we can also understand if the device is working by hearing the device at startup we can understand by the clicking of relays the two following orders are at one with the receiver not working in one with receiver working
+<p class="opendys">can also understand if the device is working by hearing the device at startup we can understand by the clicking of relays the two following orders are at one with the receiver not working in one with receiver working</p> 
 <audio src="files/audio/audio.mp3" controls preload "auto" ></audio>
 <audio src="files/audio/audio.mp3" controls preload "auto" ></audio>
 
@@ -150,14 +141,17 @@ we can also understand if the device is working by hearing the device at startup
   <p>This is some text in a div element.</p>
 </div>
 
-</FONT>
+
 
 
 
 </BODY>
 <!-- about who made part  and info -->
 <footer >
-  <p> the sorce code of this can be found <A HREF="https://github.com/car123134/Onkyo-TX-SR602E-No-Power">here</a>at github
+  <p> 
+    The sorce code of this can be found <A HREF="https://github.com/car123134/Onkyo-TX-SR602E-No-Power">here</a>at github 
+    <br>
+    also here is the site <A HREF="https://github.com/car123134/Onkyo-TX-SR602E-No-Power">here</a>
     <br>
   </p>
 </footer>

@@ -2,27 +2,68 @@ h1 {text-align: center;}
 p {text-align: center;}
 div {text-align: center;}
 
-ul.center {
-  display: inline-block;
-  text-align: left;
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
+@font-face {
+  font-family: opendys;
+  src: url(files/fonts/OpenDyslexic-Regular.woff2);
+}
+/*this for text but we use a lot of the FONT tag so that overrides this */
+/*fall backs*/
+.opendys {
+  font-family: opendys, Arial, 'Gill Sans';
+  font-size: clamp(8px, 2.6vw, 25px);
+  color: black;
+  /* font-size: 25px; */
+
+}
+body{
+    background-color: #D1E4DD;
+    font-family: Arial, sans-serif;
+    color: 000000; /*this for text but we use a lot of the FONT tag so that overrides this */
+    margin:5px; /*space on all*/
+    font-size: clamp(13px, 2.5vw, 24px);
+}
+
 .onebox {
   border: 5px outset rgb(204, 0, 255);
   background-color: lightblue;    
   text-align: center;
+  font-family: Arial ;
+  padding: 1rem;
 }
 .wbox {
   border: 5px outset rgb(255, 0, 0);
   background-color: rgb(255, 136, 0);    
   text-align: center;
+  padding: 1rem;
+  font-family: Arial ;
 }
-@font-face {
-  font-family: opendys;
-  src: url(files/fonts/OpenDyslexic-Regular.woff2);
+
+ul.list {
+  display: inline-block;
+  text-align: left;
+  line-height: 1.4;
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0 auto 1em auto;
 }
+
+ul.list li {
+  margin: 4px 0;
+  color: blue;
+}
+
+
 footer {
   text-align: center;
   padding: 3px;
+  font-size: 10px;
   background-color: DarkSalmon;
   color: white;
 }
