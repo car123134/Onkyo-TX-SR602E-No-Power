@@ -43,7 +43,7 @@ Onkyo-TX-SR602E-No-Power
 <p class="opendys">Firstly we will identify what are the exact symptoms are</p>
 
 <HR>
-<video src="files/videos/noboot1.mp4" class="center" style="max-width:14%;height:auto;" controls preload="auto" alt="onkyovid"> </video>
+<video src="files/videos/noboot1.mp4" class="center" style="max-width:21%;height:auto;" controls preload="auto" alt="onkyovid"> </video>
 <div face="fantasy">
   <h2><u> Symptoms</u></H2>
   <UL class="list" face="fantasy">
@@ -79,7 +79,7 @@ will we see the U5 board that is responsible for standby voltage/power</p>
 <!--u5 SEE NOTE we use  P MODEL for power at the -->
 <!--WE standy power good now what ?-->
 <p class="opendys">after seeing the scamatic for the board we see a certain connector that we need to have 10 voltage we will see pin "+10vs and +10vss"</p>
-<img src="files/images/Screenshot 2026-01-06 231335.png" alt="U5" class="center" style="max-width:30%;height:auto;">
+<A HREF="files/images/Screenshot 2026-01-06 231335.png"><img src="files/images/Screenshot 2026-01-06 231335.png" alt="U5" class="center" style="max-width:50%;height:auto;"></A>
 <p class="opendys"> after continuing to follow the scamatics to the 10 voltage line we will end up in a Power supply section after that we go to the Preamplifier section and there we have a board that on it has some connectors that connects to the microprocessor bord </p>
 <p class="opendys">here we have a convenient FIRMWARE WRITING PORT that lets us communicate directly with the cpu (the renesas (M16C/62P) M30627FHPGP) of the receiver </p>
 <P class="opendys">after useing UART and realterm we can conclude with that the microprocessor it halting immediately after a reset has been done on the microprocessor  </P>
@@ -89,7 +89,7 @@ will we see the U5 board that is responsible for standby voltage/power</p>
 <FONT color= "#154AC9" , face="Times New Roman" , size= "4">
 <TABLE Width=400 Align="center" BGColor="lightyellow" Border=5 BorderColor="A13BFF" Cellpadding=3 Cellspacing=3>
 <TR><TH align="Center" BGColor="0DD6D3" colspan=3> Onkyo cap test measurements</TH></TR>
-<TR Align="Center" BGColor="0DD666"><TH Align="Center">TIME</TH><TH>sat</TH><TH>v</TH>
+<TR Align="Center" BGColor="0DD666"><TH Align="Center">TIME</TH><TH>satus</TH><TH>voltage</TH>
 <TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:12m:51s</Td><Td BGColor="FF0000">not on power</Td><Td>3.587v</Td>
 <TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:13m:02s</Td><Td BGColor="FF0000">not on power</Td><Td>3.587v</Td>
 <TR Align="Center"><td Align="left" BGColor="BFB9B4">16h:13m:03s</Td><Td BGColor="FF7300">on power</Td><Td>4.713v</Td>
@@ -111,9 +111,9 @@ will we see the U5 board that is responsible for standby voltage/power</p>
 <!--ok how did we fix it-->
 <P class="opendys">after taking a carefully look at the microprocessors diagram we find a pin with the name POFF that connects to a transistor that when the line goes LOW it signals to the cpu that there has been a POWER FAILRE and therefore to halt the cpu</P>
 <P class="opendys">after measuring the transistor</P>
-<A HREF="files/images/seetr.png"><img src="files/images/seetr.png" alt="diagram POFF" style="max-width:27%;height:auto;"></a>
-<A HREF="files/images/2025-05-16-18-47-38-6112.jpg"><img src="files/images/2025-05-16-18-47-38-6112.jpg" alt="transistor" style="max-width:28%;height:auto;"></a>
-<A HREF="files/images/POFF.jpg"><img src="files/images/POFF.jpg" alt="POFF" style="max-width:36%;height:auto;"></a>
+<A HREF="files/images/seetr.png"><img src="files/images/seetr.png" alt="diagram POFF" style="max-width:65%;height:auto;"class="center"></a><br>
+<A HREF="files/images/2025-05-16-18-47-38-6112.jpg"><img src="files/images/2025-05-16-18-47-38-6112.jpg" alt="transistor(POFF)" style="max-width:53%;height:auto;"class="center" ></a><br>
+<A HREF="files/images/POFF.jpg"><img src="files/images/POFF.jpg" alt="POFF" style="max-width:30%;height:auto;" class="center" ></a><br>
 
 
 
@@ -124,20 +124,29 @@ when we started tracing the traces of the transistor line sand we will we will e
 <p class="opendys">after seeing that there is no voltage going to that certain pin for the transistor we go back a board and go to the preamplifier bord from before and we see near some capacitors some suspicious substance the after taking more carefully we see that a corrosion has happened to the traces due to a capacitor leaking we will now repair that trace and will try again </p>
 <p class="opendys">the after repairing the trace and  replacing some capacitors we see that the transistor now doesn't pull pull low  letting the cpu of the receiver continue as normal in this the receiver goes properly into standbyand with that we have fixed the receiver</p>
 
-<A HREF="files/images/fix1.jpg"><img src="files/images/fix1.jpg" alt="fix1" style="max-width:15%;height:auto;"></a>
-<A HREF="files/images/fix2.jpg"><img src="files/images/fix2.jpg" alt="fix2" style="max-width:18%;height:auto;"></a>
-<A HREF="files/images/fix3.png"><img src="files/images/fix3.png" alt="fix3" style="max-width:27%;height:auto;"></a>
-<A HREF="files/images/fix4.png"><img src="files/images/fix4.png" alt="fix4" style="max-width:30%;height:auto;"></a>
+<A HREF="files/images/fix1.jpg"><img src="files/images/fix1.jpg" alt="fix1" style="max-width:25%;height:auto;"class="center"></a><br>
+<A HREF="files/images/fix2.jpg"><img src="files/images/fix2.jpg" alt="fix2" style="max-width:42%;height:auto;"class="center"></a><br>
+<A HREF="files/images/fix3.png"><img src="files/images/fix3.png" alt="fix3" style="max-width:37%;height:auto;"class="center"></a><br>
+<A HREF="files/images/fix4.png"><img src="files/images/fix4.png" alt="fix4" style="max-width:50%;height:auto;"class="center"></a><br>
 
 ADD VID AND AUDIO HERE HE WHAT DO ADD FROM TEST.TXT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<p class="opendys">can also understand if the device is working by hearing the device at startup we can understand by the clicking of relays the two following orders are at one with the receiver not working in one with receiver working</p> 
-<audio src="files/audio/audio.mp3" controls preload "auto" ></audio>
-<audio src="files/audio/audio.mp3" controls preload "auto" ></audio>
+<p class="opendys">can also understand if the device is working by hearing the device at startup we can understand by the clicking of relays the two following orders are at one with the receiver not working in one with receiver working</p>
 
+<center>
+<div class="adbox">
+<audio src="files/audio/onkyo-boot-up-normal.ogg" controls preload "auto"  class="center"></audio>
+</div>
+</center>
+
+<center>
+<div class="adbox2">
+<audio src="files/audio/onkyo-F-boot-up.ogg" controls preload "auto"  class="center"></audio>
+</div>
+</center>
 <!--font here can end as well and div for audio-->
 
 <div class="onebox">
-  <h2>to conclude because the unit was for a lot of years in storege some of the capacitors started licking on the pcb of the Preamplifier and therefore started corrosion the trace enough to make to cut of power to S13 it wasn't getting power so the receivers cpu was trigering the power failure detector was active and preventing the cpu from starting after fixing the trasis the receive startd working fine</h2>
+  <h3>to conclude because the unit was for a lot of years in storege some of the capacitors started licking on the pcb of the Preamplifier and therefore started corrosion the trace enough to make to cut of power to S13 it wasn't getting power so the receivers cpu was trigering the power failure detector was active and preventing the cpu from starting after fixing the trasis the receive startd working fine</h3>
   <p>This is some text in a div element.</p>
 </div>
 

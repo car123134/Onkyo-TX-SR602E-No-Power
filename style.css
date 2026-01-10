@@ -36,6 +36,8 @@ body{
   text-align: center;
   font-family: Arial ;
   padding: 1rem;
+  font-size: clamp(8px, 2.6vw, 25px);
+
 }
 .wbox {
   border: 5px outset rgb(255, 0, 0);
@@ -43,6 +45,26 @@ body{
   text-align: center;
   padding: 1rem;
   font-family: Arial ;
+}
+.adbox {
+  border: 7px outset rgba(64, 240, 122, 0.76);
+  display: inline-block;
+  background-color: lightblue;    
+  text-align: left;
+  font-family: Arial ;
+  padding: 1rem;
+  font-size: clamp(8px, 2.6vw, 25px);
+  
+}
+.adbox2 {
+  border: 6px outset rgba(255, 0, 8, 0.884);
+  display: inline-block;
+  background-color: lightblue;    
+  text-align: left;
+  font-family: Arial ;
+  padding: 1rem;
+  font-size: clamp(8px, 2.6vw, 25px);
+  
 }
 
 ul.list {
